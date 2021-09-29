@@ -30,17 +30,20 @@
                 <span class="display-4" id="vitoriasPlayer1">0</span> <span class="display-4">vitórias</span>
                 
                 <label for="escolhaJokenpo" class="d-block pt-3 display-6">Player</label>
-                <select name="" id="escolhaJokenpo" class="select-form mt-3">
-                    <option value="">Pedra</option>
-                    <option value="">Papel</option>
-                    <option value="">Tesoura</option>
+                <select name="" id="escolhaJokenpo" class=" mt-3 fs-5">
+                    <option value="pedra" id="pedra">Pedra</option>
+                    <option value="papel" id="papel">Papel</option>
+                    <option value="tesoura" id="tesoura">Tesoura</option>
                 </select>
+
+                <span class="d-block pt-3 fs-5" id="escolhaPlayer">-</span>
             </section>
 
             <section class="col text-center">
-                <label class="display-4" id="vitoriasPlayer2">0</label> <span class="display-4">vitórias</span>
+                <label class="display-4" id="vitoriasComputer">0</label> <span class="display-4">vitórias</span>
                 <label class="d-block pt-3 display-6" for="escolhaComputer">Computer</label>
-                <label class="d-block pt-3" id="escolhaComputer">Let´s play the game!</label>
+                <label class="d-block pt-3 fs-5" id="escolhaComputer">A minha escolha é:</label>
+                <label class="d-block pt-3 fs-5" id="escolhaComputer">-</label>
             </section>            
         </div>        
         <button class=" btn btn-lg btn-success display-6 w-50 pt-2 pb-2 fs-3" onclick="">Jogar</button>        
