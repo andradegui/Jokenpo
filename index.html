@@ -40,6 +40,8 @@
                 <span class="d-block pt-3 fs-5" id="escolhaPlayer">-</span>
             </section>
 
+            <span class="col fs-5 d-none" id="vencedor">-</span>
+
             <section class="col text-center">
                 <label class="display-4 mx-1 " id="vitoriasComputer">0</label> <span class="display-4">vitórias</span>
                 <label class="d-block pt-3 display-6" for="escolhaComputer">Computer</label>
@@ -50,10 +52,12 @@
         <button class=" btn btn-lg btn-success display-6 w-50 pt-2 pb-2 fs-3" onclick="jokenpo.jogar()">Jogar</button>        
     </section>
 
-    <section class="container mt-5">
+    <section class="container mt-5 mb-5">
         <table class="table text-center table-striped table-hover" id="tabela">
             <thead> <!--CABEÇALHO TABELA-->
                 <tr> <!--TABLE ROW-->
+
+                    <th>Número Partida</th>
                     <th>Player</th>
                     <th>Computer</th>
                     <th>Vencedor</th>
@@ -64,12 +68,8 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                </tr>
-                <tr>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                </tr>            
             </tbody>
         </table>
     </section>
