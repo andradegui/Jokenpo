@@ -19,15 +19,25 @@ let player = {
 
 let computer = {
     vitorias: 0,
-    escolha: ['Pedra', 'Papel', 'Tesoura'],
+    escolha: [0, 1, 2],
     escolhaComputer: "",
     buscaEscolhaJokenpo: function () {
 
-        this.escolhaComputer = this.escolha[Math.floor(Math.random() * 2)];
+        this.escolhaComputer = this.escolha[Math.floor(Math.random() * this.escolha.length)];
 
+        switch (this.escolhaComputer) {
+            case 0:
+                this.escolhaComputer = "Pedra";
+                break;
+            case 1:
+                this.escolhaComputer = "Papel";
+                break;
+            case 2:
+                this.escolhaComputer = "Tesoura";
+                break;
+        };
 
         this.imprimir();
-
 
     },
     imprimir: function () {
@@ -106,29 +116,26 @@ let jokenpo = {
         juiz.regrasJogo();
 
         let saveChose = {
-            escolhaComputer: computer.escolhaComputer,
             escolhaPlayer: player.escolhaPlayer,
+            escolhaComputer: computer.escolhaComputer,            
             ganhadorPartida: juiz.ganhadorPartida,
             NumeroPartida: this.historicoPartidas.length
         }
-        jokenpo.historicoPartidas.push(saveChose);
+        this.historicoPartidas.push(saveChose)
 
         let table = document.getElementById('tabela').getElementsByTagName('tbody')[0];
+        table.innerHTML = '';
         
-
         for (let i = 0; i < this.historicoPartidas.length; i++) {
 
-            table.innerHTML += this.criaLinha(this.historicoPartidas[i]);
+            table.innerHTML += this.criaLinha(this.historicoPartidas[i]); 
             
-            
-        }
-
-       
+        }       
     },
 
     criaLinha: function (objeto) {
         return `<tr>
-                    <td>${objeto.NumeroPartida}</td>
+                    
                     <td>${objeto.escolhaPlayer}</td>
                     <td>${objeto.escolhaComputer}</td>    
                     <td>${objeto.ganhadorPartida}</td>    
